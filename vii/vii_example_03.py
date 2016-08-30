@@ -8,7 +8,15 @@
 # find all permutations of the 'find' string within 'search'.
 # Return a list containing the location of each permutation or an empty
 # list if no permutations exist.
-
+#
+# The real trick to this problem is not understanding what you are asked
+# to find but understanding what you were not asked to find.  The obvious
+# solution is calculate every permutation of 'find' and then window over
+# search and compare every permutation to that window.  This has an abysmal
+# runtime of O(find! * search).  But the problem does not ask that you
+# identify the _specific_ permutation that was found but, rather, only that
+# you identify that _a_ permutation was found.  That is a major difference
+# and it has a huge impact on the solution.
 from collections import defaultdict
 
 # O(search) + O(find)
