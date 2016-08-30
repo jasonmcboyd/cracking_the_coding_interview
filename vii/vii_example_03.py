@@ -8,7 +8,9 @@
 # find all permutations of the 'find' string within 'search'.
 # Return a list containing the location of each permutation or an empty
 # list if no permutations exist.
+
 from collections import defaultdict
+
 # O(search) + O(find)
 def vii_example_03(search, find):
 	
@@ -69,7 +71,7 @@ def vii_example_03(search, find):
 				count += 1
 		
 		# If 'count == 0' then the current window is a permutation of 'find'
-		# so add the beginning of the window to 'result'.
+		# so add the index of the beginning of the window to 'result'.
 		if count == 0:
 			result.append(i+1-len(find))
 	
